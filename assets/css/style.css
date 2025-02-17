@@ -1,0 +1,28 @@
+/* Blue and White Theme */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f8ff; /* Light Blue */
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #0047ab; /* Dark Blue */
+    color: #fff;
+    padding: 10px 0;
+    text-align: center;
+}
+
+button {
+    background-color: #0047ab; 
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #003b8b; /* Darker Blue */
+}
