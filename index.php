@@ -48,14 +48,15 @@ session_start();
 
         /* Carousel */
         .carousel-item img {
-            height: 450px;
+            height: 500px;
             object-fit: cover;
         }
 
         .carousel-caption {
-            background: rgba(0, 0, 0, 0.6);
+            background: rgba(0, 0, 0, 0.3);
             padding: 15px;
             border-radius: 5px;
+            backdrop-filter: blur(5px);
         }
 
         /* Buttons */
@@ -161,6 +162,32 @@ session_start();
     <span class="carousel-control-next-icon" aria-hidden="true"></span>
   </button>
 </div>
+<!-- About Us Section -->
+<div class="container my-5 py-5" style="background-color:#f8f9fa; border-radius:20px; box-shadow:0 4px 8px rgba(0,0,0,0.1); overflow:hidden;">
+  <h2 class="text-center mb-4" style="color:#002366; font-weight:700;">About Us</h2>
+  <div class="row align-items-center">
+    <!-- Left Side (Image) -->
+    <div class="col-md-5">
+      <img src="assets/images/about.jpg" alt="About Us" class="img-fluid" style="height:350px; width:100%; object-fit:cover; border-radius:15px;">
+    </div>
+    
+    <!-- Right Side (Text) -->
+    <div class="col-md-7 px-4">
+      <h3 style="color:#002366; font-weight:600;">Caring for You, Always</h3>
+      <p style="text-align:justify; font-size:16px; line-height:1.8; color:#333;">
+        At Care Compass Hospitals, we are dedicated to providing exceptional medical care with compassion and expertise. 
+        Our team of skilled professionals utilizes advanced technology to ensure the highest standards of healthcare. 
+        We offer personalized services, from routine check-ups to complex treatments.
+      </p>
+      <p style="text-align:justify; font-size:16px; line-height:1.8; color:#333;">
+        Our vision is to create a healthier community by delivering patient-centered care with integrity and excellence. 
+        Trust us to be your partner on your journey to better health.
+      </p>
+      <button class="btn btn-primary mt-3 px-4 py-2" style="border-radius:30px;">Learn More</button>
+    </div>
+  </div>
+</div>
+
 
 <!-- Services Section -->
 <div class="container my-5">

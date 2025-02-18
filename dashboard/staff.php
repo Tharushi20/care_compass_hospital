@@ -2,11 +2,21 @@
 session_start();
 include('../includes/db.php');
 
-// Check if user is logged in and is staff
+// Only Staff Can Access
 if (!isset($_SESSION['user_id']) || $_SESSION['role'] !== 'staff') {
     header("Location: ../index.php");
     exit;
 }
+
+// Query for Today's Appointments
+$today = date('Y-m-d');
+$today_appointments = mysqli_fetch_assoc(mysqli_query($conn, "SELECT COUNT(*) AS count FROM appointments WHERE appointment_date='$today'"))['count'];
+
+// Query for Total Patients
+$total_patients = mysqli_fetch_assoc(mysqli_query($conn, "SELECT COUNT(*) AS count FROM patients"))['count'];
+
+// Query for Lab Reports Processed
+$total_lab_reports = mysqli_fetch_assoc(mysqli_query($conn, "SELECT COUNT(*) AS count FROM lab_reports"))['count'];
 ?>
 
 <!DOCTYPE html>
@@ -58,7 +68,7 @@ if (!isset($_SESSION['user_id']) || $_SESSION['role'] !== 'staff') {
 
         /* Main Content */
         .main-content {
-            margin-left: 250px;
+            margin-left: 260px;
             padding: 20px;
         }
 
@@ -109,7 +119,7 @@ if (!isset($_SESSION['user_id']) || $_SESSION['role'] !== 'staff') {
 <div class="sidebar">
     <h4>Staff Panel</h4>
     <a href="staff.php"><i class="fas fa-chart-line"></i> Dashboard</a>
-    <a href="appointments.php"><i class="fas fa-calendar"></i> Manage Appointments</a>
+    <a href="manage_appointments.php"><i class="fas fa-calendar"></i> Manage Appointments</a>
     <a href="patients.php"><i class="fas fa-procedures"></i> View Patients</a>
     <a href="lab_reports.php"><i class="fas fa-flask"></i> Manage Lab Reports</a>
     <a href="../logout.php" class="btn btn-danger logout-btn"><i class="fas fa-sign-out-alt"></i> Logout</a>
@@ -122,27 +132,27 @@ if (!isset($_SESSION['user_id']) || $_SESSION['role'] !== 'staff') {
         <p>Manage hospital operations and assist patients.</p>
     </div>
 
-    <!-- Dashboard Cards -->
+    <!-- Dashboard Cards with Correct Counts -->
     <div class="row mt-4">
         <div class="col-md-4">
             <div class="dashboard-card">
                 <i class="fas fa-calendar-check"></i>
                 <h5>Today's Appointments</h5>
-                <p>45</p>
+                <p><?php echo $today_appointments; ?></p>
             </div>
         </div>
         <div class="col-md-4">
             <div class="dashboard-card">
                 <i class="fas fa-procedures"></i>
                 <h5>Total Patients</h5>
-                <p>120</p>
+                <p><?php echo $total_patients; ?></p>
             </div>
         </div>
         <div class="col-md-4">
             <div class="dashboard-card">
                 <i class="fas fa-flask"></i>
                 <h5>Lab Reports Processed</h5>
-                <p>30</p>
+                <p><?php echo $total_lab_reports; ?></p>
             </div>
         </div>
     </div>

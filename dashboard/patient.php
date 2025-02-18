@@ -110,6 +110,7 @@ if (!isset($_SESSION['user_id']) || $_SESSION['role'] !== 'patient') {
     <h4>Patient Panel</h4>
     <a href="patient.php"><i class="fas fa-home"></i> Dashboard</a>
     <a href="appointments.php"><i class="fas fa-calendar-check"></i> My Appointments</a>
+    <a href="book_appointment.php"><i class="fas fa-calendar-check"></i> Book Appointments</a>
     <a href="medical_records.php"><i class="fas fa-notes-medical"></i> Medical Records</a>
     <a href="feedback.php"><i class="fas fa-comment-dots"></i> Provide Feedback</a>
     <a href="../logout.php" class="btn btn-danger logout-btn"><i class="fas fa-sign-out-alt"></i> Logout</a>
@@ -150,3 +151,4 @@ if (!isset($_SESSION['user_id']) || $_SESSION['role'] !== 'patient') {
 
 </body>
 </html>
+
