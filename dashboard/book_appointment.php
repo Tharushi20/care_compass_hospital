@@ -80,6 +80,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             background-color: #0056d2;
         }
 
+
         /* Main Content */
         .main-content {
             margin-left: 260px;
@@ -103,6 +104,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             background-color: #003399;
             transform: translateY(-2px);
         }
+        /* Logout Button */
+        .logout-btn {
+            position: absolute;
+            bottom: 30px;
+            left: 20px;
+            width: 80%;
+        }
     </style>
 </head>
 <body>
@@ -112,7 +120,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <h4>Patient Panel</h4>
     <a href="patient.php"><i class="fas fa-home"></i> Dashboard</a>
     <a href="appointments.php"><i class="fas fa-calendar-check"></i> My Appointments</a>
-    <a href="../logout.php" class="btn btn-danger w-100 mt-3"><i class="fas fa-sign-out-alt"></i> Logout</a>
+    <a href="book_appointment.php"><i class="fas fa-calendar-check"></i> Book Appointments</a>
+    <a href="medical_records_patient.php"><i class="fas fa-notes-medical"></i> Medical Records</a>
+    <a href="lab_reports_patient.php"><i class="fas fa-flask"></i> Lab Reports</a>
+    <a href="#" data-bs-toggle="modal" data-bs-target="#feedbackModal"><i class="fas fa-comment-dots"></i> Provide Feedback</a>
+    <a href="../logout.php" class="btn btn-danger logout-btn"><i class="fas fa-sign-out-alt"></i> Logout</a>
 </div>
 
 <!-- Main Content -->

@@ -41,9 +41,70 @@ $appointments = mysqli_query($conn,
         .status-pending { background-color: #ffcc00; color: #333; }
         .status-completed { background-color: #28a745; color: white; }
         .status-cancelled { background-color: #dc3545; color: white; }
+        .container {
+    margin-left: 260px; 
+    padding-right: 20px; 
+    width: calc(100% - 260px); 
+    overflow-x: auto; 
+}
+
+
+        /* Sidebar */
+        .sidebar {
+            height: 100vh;
+            width: 250px;
+            position: fixed;
+            background-color: #0047ab;
+            color: white;
+            padding-top: 20px;
+        }
+
+        .sidebar h4 {
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .sidebar a {
+            padding: 12px 20px;
+            text-decoration: none;
+            font-size: 16px;
+            color: white;
+            display: flex;
+            align-items: center;
+            transition: background 0.3s;
+        }
+
+        .sidebar a i {
+            margin-right: 10px;
+        }
+
+        .sidebar a:hover {
+            background-color: #0056d2;
+        }
+        /* Logout Button */
+        .logout-btn {
+            position: absolute;
+            bottom: 30px;
+            left: 20px;
+            width: 80%;
+        }
+
     </style>
 </head>
 <body>
+
+<!-- Sidebar -->
+<div class="sidebar">
+    <h4>Patient Panel</h4>
+    <a href="patient.php"><i class="fas fa-home"></i> Dashboard</a>
+    <a href="appointments.php"><i class="fas fa-calendar-check"></i> My Appointments</a>
+    <a href="book_appointment.php"><i class="fas fa-calendar-check"></i> Book Appointments</a>
+    <a href="medical_records_patient.php"><i class="fas fa-notes-medical"></i> Medical Records</a>
+    <a href="lab_reports_patient.php"><i class="fas fa-flask"></i> Lab Reports</a>
+    <a href="#" data-bs-toggle="modal" data-bs-target="#feedbackModal"><i class="fas fa-comment-dots"></i> Provide Feedback</a>
+    <a href="../logout.php" class="btn btn-danger logout-btn"><i class="fas fa-sign-out-alt"></i> Logout</a>
+</div>
 
 <div class="container mt-4">
     <div class="header">
